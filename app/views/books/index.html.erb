@@ -1,0 +1,11 @@
+<% @books.each do |book| %>
+<div>
+    <%= image_tag book.get_image %>
+    <p>投稿ユーザー画像：<%= image_tag 'profile.jpg' %></p>
+    <p>Title：<%= book.title %></p>
+    <p>body：<%= book.body %></p>
+    <P>ユーザーネーム:<%= book.user.name %></P>
+    <%= puts @books.inspect %>
+</div>
+
+<% end %>
