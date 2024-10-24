@@ -1,1 +1,9 @@
-<%= render 'books/list', books: @books %>
+<%= render 'books/list', book: @book, user: @user %>
+
+<h1>Users</h1>
+
+<%= @users.each do |user| %>
+
+  <p>タイトル</p>
+  
+  
