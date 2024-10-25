@@ -16,7 +16,7 @@
     <header class="bg-dark text-white">
     <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-     <a class="navbar-brand p-3" href="/">Bookers</a> 
+     <a class="navbar-brand p-3 text-light" href="/">Bookers</a> 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
@@ -26,37 +26,37 @@
           
     <% if user_signed_in? %>
       
-      <li  class="nav-item">
-        <%= link_to "Home", user_path(current_user) %>
+      <li  class="nav-item mb-3">
+        <i class="fa-solid fa-house me-1"></i> <%= link_to "Home", user_path(current_user) , class: "text-light" %>
       </li>
     
-      <li class="nav-item">
-      <%= link_to 'Users', users_path %>
+      <li class="nav-item mb-3">
+      <i class="fa-solid fa-users me-1"></i> <%= link_to 'Users', users_path , class: "text-light" %>
       </li>
       
-      <li class="nav-item">
-        <%= link_to "Books", books_path %>
+      <li class="nav-item mb-3">
+        <i class="fa-solid fa-book me-1"></i> <%= link_to "Books", books_path , class: "text-light" %>
       </li>
     
-      <li class="nav-item">
-        <%= link_to "log out", destroy_user_session_path, method: :delete %>
+      <li class="nav-item mb-3">
+        <i class="fa-solid fa-right-to-bracket me-1"></i> <%= link_to "log out", destroy_user_session_path, method: :delete , class: "text-light" %>
       </li>
       
     <% else %>
     
 
-       <li class="nav-item">
-        <%= link_to "Home",root_path %>
+      <li class="nav-item mb-3 ms-3">
+        <i class="fa-solid fa-house me-1"></i> <%= link_to "Home",root_path , class: "text-light" %>
+       </li>
+      <li class="nav-item mb-3 ms-3">
+        <i class="fa-solid fa-link mb-1"></i> <%= link_to "About", about_path , class: "text-light" %>
       </li>
-      <li class="nav-item">
-        <%= link_to "About", about_path %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Log in", new_user_session_path %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Sign up", new_user_registration_path %>
-      </li>
+      <li class="nav-item mb-3 ms-3">
+        <i class="fa-solid fa-user-plus me-1"></i> <%= link_to "Sign up", new_user_registration_path , class: "text-light" %>
+       </li>
+       <li class="nav-item mb-3 ms-3">
+        <i class="fa-solid fa-right-to-bracket me-1"></i> <%= link_to "Log in", new_user_session_path , class: "text-light" %>
+       </li>
 
     <% end %>
       </ul>
