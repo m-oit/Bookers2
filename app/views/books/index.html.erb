@@ -1,22 +1,31 @@
-
-<%= render 'books/list', book: @book, user: @user %>
-
-
-<div class = "container">
- <div class ="row">
-  <div class="col-md-8 offset-md-1">
-      
-   <h1>Books</h1>
-   
-<% @books.each do |book| %>
-  <div>
-    <%= image_tag book.get_image %>
-     <p>Title : <%= link_to book.title, book_path(book) %></p>
-    <p>Opinion：<%= book.body %></p>
-    <p>ユーザーネーム：<%= book.user.name %></p>
-  </div>
+<% if @book.errors.any? %> 
+  <%= @book.errors.count %>errors prohibited this obj from being saved: 
+  <ul>
+    <% @book.errors.full_messages.each do |message| %> 
+      <li><%= message %></li>
+    <% end %>
+  </ul>
 <% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+        <%= render 'books/list', book: @book, user: @user %>
+    </div>
+
+    <div class="col-md-8 offset-md-1">
+      
+     <h1>Books</h1>
    
+     <% @books.each do |book| %>
+     <div>
+     <%= image_tag book.user.profile_image, width: 100, height: 100 %>
+     <p>Title : <%= link_to book.title, book_path(book) %></p>
+     <p>Opinion：<%= book.body %></p>
+     </div>
+<% end %>
+
+<%= paginate @books %>
   </div>
  </div>
 </div>

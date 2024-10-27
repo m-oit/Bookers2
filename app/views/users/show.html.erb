@@ -1,18 +1,21 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
 <%= render 'books/list', book: @book, user: @user %>
 
 
-
 <% @books.each do |book| %>
-<div>
-  <% if book.user.present? %>
+  <div>
+    <% if book.user.present? %>
       <p><%= image_tag book.user.get_profile_image(100, 100) %></p>
+      <p><%= link_to book.title, book_path(book.id) %></p>
+      <p><%= book.body %></p>
     <% else %>
       <p>ユーザー画像がありません。</p>
     <% end %>
-　<%= link_to book.title, book_path(book.id) %>
-  <p><%= book.body %></p>
-  <p>ユーザーネーム：<%= book.user.name %></p>
+  </div>
 <% end %>
-
 <%= paginate @books %>
+
 
