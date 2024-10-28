@@ -4,17 +4,24 @@
       <%= render 'books/list', book: @book, user: @user %>
     </div>
 
-    <div class="col-md-8 offset-md-1">
-      <h1>Users</h1>
-      
+<div class="col-md-8 offset-md-1">
+ <h1>Users</h1>
+　<table class="table table-striped">
+   <thead>
+     <tr>
+      <th>image</th>
+      <th>name</th>
+      <th></th>
+      </tr>
+   </thead>
+    <tbody>
       <% @books.each do |book| %>
-      <div>
-        <%= image_tag book.user.profile_image, width: 100, height: 100 %>
-        <p>ユーザーネーム：<%= book.user.name %></p>
-        <%= link_to 'Show', user_path(book.user) %>
-      </div>
+         <tr>
+         <td><%= image_tag book.user.profile_image, width: 100, height: 100 %></td>
+         <td><%= book.user.name %></td>
+         <td><%= link_to 'Show', user_path(book.user) %></td>
+        </tr>
       <% end %>
-      
-    </div>
-  </div>
+    </tbody>
+ </table>
 </div>

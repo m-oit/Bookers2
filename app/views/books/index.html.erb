@@ -14,18 +14,27 @@
     </div>
 
     <div class="col-md-8 offset-md-1">
-      
      <h1>Books</h1>
-   
+     <table class="table table-striped">
+      <thead>
+       <tr>
+         <th></th>
+         <th>Title</th>
+         <th>Opinion</th>
+       </tr>
+      </thead>
+     <tbody>
      <% @books.each do |book| %>
-     <div>
-     <%= image_tag book.user.profile_image, width: 100, height: 100 %>
-     <p>Title : <%= link_to book.title, book_path(book) %></p>
-     <p>Opinion：<%= book.body %></p>
-     </div>
-<% end %>
-
-<%= paginate @books %>
+     <tr>
+     <td><%= image_tag book.user.profile_image, width: 100, height: 100 %></td>
+     <td><%= link_to book.title, book_path(book) %></td>
+     <td><%= book.body %></td>
+     </tr>
+     <% end %>
+     
+     </tbody>
+    </table>
+     <%= paginate @books %>
   </div>
  </div>
 </div>
