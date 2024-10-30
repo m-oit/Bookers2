@@ -1,5 +1,9 @@
 <h1>User info</h1>
+<% if @user.present? && @user.profile_image.attached? %>
 <p><%= image_tag @user.profile_image, width: 100, height: 100 %></p>
+<% else %>
+<p><%= image_tag 'profile.jpeg', width: 100, height: 100 %></p>
+<% end %>
 <table class="table table-striped">
   <tbody>
       <th>Name</th>
@@ -13,10 +17,10 @@
     </tr>
   </tbody>
 </table>
-<p><%= link_to "<i class='fa-solid fa-gears'></i>".html_safe, edit_user_path(@user), class: "btn btn-outline-secondary btn-block" %></p>
+<p><%= link_to "<i class='fa-solid fa-user-gear'></i>".html_safe, edit_user_path(@user), class: "btn btn-outline-secondary btn-block" %></p>
   
   
-<h1>New Book</h1>
+<h1>New book</h1>
 <% if book.errors.any? %>
  <%= book.errors.count %>errors prohibited this obj from being saved:
  <ul>
@@ -32,5 +36,5 @@
     <%= f.text_field :title %>
     <h4>body</h4>
     <%= f.text_area :body %>
-    <%= f.submit 'Create book' , class: "btn btn-success" %>
+    <%= f.submit 'Create Book' , class: "btn btn-success" %>
     <% end %>
