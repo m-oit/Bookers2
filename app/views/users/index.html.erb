@@ -15,14 +15,14 @@
       </tr>
    </thead>
     <tbody>
-      <% @books.each do |book| %>
+      <% @users.each do |user| %>
          <tr>
-         <td><%= image_tag book.user.profile_image, width: 100, height: 100 %></td>
-         <td><%= book.user.name %></td>
-         <td><%= link_to 'Show', user_path(book.user) %></td>
+          <td><%= image_tag user.get_profile_image(100, 100) if user.profile_image.attached? %></td>
+          <td><%= user.name %></td>
+         <td><%= link_to 'Show', user_path(user) %></td>
         </tr>
       <% end %>
     </tbody>
  </table>
- <%= paginate @books %>
+ <%= paginate @users %>
 </div>

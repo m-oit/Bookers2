@@ -21,7 +21,7 @@
 <% @books.each do |book| %>
   <tr>
     <% if book.user.present? %>
-      <th><%= image_tag book.user.get_profile_image(100, 100) %></th>
+      <th><%= link_to image_tag(book.user.get_profile_image(100, 100)), user_path(book.user) %></th>
       <th><%= link_to book.title, book_path(book.id) %></th>
       <th><%= book.body %></th>
     <% else %>
@@ -29,9 +29,9 @@
     <% end %>
   </tr>
 <% end %>
-<%= paginate @books %>
     </tbody>
    </table>
+   <%= paginate @books %>
 </div>
 
 
