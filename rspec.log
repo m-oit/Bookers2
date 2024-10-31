@@ -237,7 +237,7 @@ Userモデルのテスト
       表示内容の確認
 [32m        URLが正しい[0m
 [32m        「Book detail」と表示される[0m
-[31m        ユーザ画像・名前のリンク先が正しい (FAILED - 4)[0m
+[32m        ユーザ画像・名前のリンク先が正しい[0m
 [32m        投稿のtitleが表示される[0m
 [32m        投稿のopinionが表示される[0m
 [32m        投稿の編集リンクが表示されない[0m
@@ -252,7 +252,7 @@ Userモデルのテスト
     他人のユーザ詳細画面のテスト
       表示の確認
 [32m        URLが正しい[0m
-[31m        投稿一覧のユーザ画像のリンク先が正しい (FAILED - 5)[0m
+[32m        投稿一覧のユーザ画像のリンク先が正しい[0m
 [32m        投稿一覧に他人の投稿のtitleが表示され、リンクが正しい[0m
 [32m        投稿一覧に他人の投稿のopinionが表示される[0m
 [32m        自分の投稿は表示されない[0m
@@ -298,7 +298,7 @@ Failures:
 
   2) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 bodyフォームに値が入っていない
      [31mFailure/Error: expect(find_field('book[body]').text).to be_blank[0m
-     [31m  expected `"wwectu7e8l86deavcu7g".blank?` to be truthy, got false[0m
+     [31m  expected `"rooh78axr7z9929me6v5".blank?` to be truthy, got false[0m
      [36m# ./spec/system/02_after_login_spec.rb:158:in `block (4 levels) in <main>'[0m
 
   3) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される
@@ -306,24 +306,12 @@ Failures:
      [31m  expected `Book::ActiveRecord_Associations_CollectionProxy#count` to have changed by 1, but was changed by 0[0m
      [36m# ./spec/system/02_after_login_spec.rb:172:in `block (4 levels) in <main>'[0m
 
-  4) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 ユーザ画像・名前のリンク先が正しい
-     [31mFailure/Error: expect(page).to have_link other_book.user.name, href: user_path(other_book.user)[0m
-     [31m  expected to find link "hxrbzv55mc" with href "/users/2" but there were no matches[0m
-     [36m# ./spec/system/03_finishing_touches_spec.rb:226:in `block (5 levels) in <main>'[0m
-
-  5) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧のユーザ画像のリンク先が正しい
-     [31mFailure/Error: expect(page).to have_link '', href: user_path(other_user)[0m
-     [31m  expected to find link "" with href "/users/2" but there were no matches[0m
-     [36m# ./spec/system/03_finishing_touches_spec.rb:283:in `block (5 levels) in <main>'[0m
-
-Finished in 38.13 seconds (files took 3.83 seconds to load)
-[31m201 examples, 5 failures[0m
+Finished in 28.02 seconds (files took 3.79 seconds to load)
+[31m201 examples, 3 failures[0m
 
 Failed examples:
 
 [31mrspec ./spec/system/02_after_login_spec.rb:50[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 表示内容の確認 自分と他人の画像のリンク先が正しい[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:157[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 bodyフォームに値が入っていない[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:171[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:225[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 ユーザ画像・名前のリンク先が正しい[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:282[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧のユーザ画像のリンク先が正しい[0m
 

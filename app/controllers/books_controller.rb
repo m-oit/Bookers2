@@ -29,6 +29,7 @@ class BooksController < ApplicationController
     @users = @book.user
     @books = Book.page(params[:page])
     @user = @book.user
+    @new_book = Book.new
   end
   
   def edit
